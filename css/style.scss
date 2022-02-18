@@ -1,0 +1,444 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+//-------------------------------------------------------
+
+/* *{
+    outline: red 1px solid !important;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+@font-face {
+    font-family: league;
+    src: url(../assets/fonts/friz-quadrata-std-medium-5870338ec7ef8.otf);
+}
+.main-grid{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template: 160px 1fr / 225px 1fr;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    
+    .side-nav{
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+        background-color: rgb(154, 6, 128);
+        padding: 1rem;
+        
+        .logo{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: rgb(8, 255, 251);
+            text-shadow: black 1px 1px 2px;
+            font-family: league;
+            display: flex;
+            gap: 5px;
+            height: 40px;
+
+            p{
+                align-self: center;
+                position: relative;
+                top: 3px;
+            }
+            
+            svg{
+                width: 30px;
+                height: 30px;
+                fill: white;
+                align-self: center;
+            }
+        } 
+    }
+
+    .side-items{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li{
+            display:flex;
+            height: 40px;
+            width: 145px;
+
+            svg{
+                margin-right: 10px;
+                width: 25px;
+                height: 25px;
+                fill: cyan;
+                stroke-width: 1;
+                vertical-align:text-bottom; //so useful.
+            }
+        }
+        
+        a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            align-self: center;
+        }
+
+        & :nth-child(6){
+            margin-bottom: 30px;
+        }
+    }
+
+    .header-nav{
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template: repeat(2, 1fr) / 1fr;
+        background-color: rgb(48, 27, 63);
+        padding: 0 1rem 1rem 1rem;
+
+        .header-one{
+            display:flex;
+            justify-content: flex-start;
+
+            svg{
+                height: 25px;
+                width: 25px;
+                fill:rgb(8, 255, 251);
+            }
+
+            .search-bar{
+                margin-left: 30px;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            input{
+                width: 500px;
+                height: 20px;
+                outline: rgb(164, 90, 218) 2px solid;
+                border-radius: .5rem;
+                background-color: rgb(241, 212, 212);
+                font-family: league;
+            }
+
+            .right-items{
+                display: flex;
+                align-items: center;
+                margin-left: 150px;
+                align-self: center;
+                gap: 20px;
+
+                img{
+                    height: 55px;
+                    width: 55px;
+                }
+
+                p{
+                    font-family: league;
+                    font-size: 1.1rem;
+                    position: relative;
+                    top: 5px;
+                    color: rgb(255, 0, 234);
+                    font-weight: bold;
+                    text-shadow: black 2px 2px 4px;  
+                }  
+            }
+        }
+
+        .header-two{
+            display: flex;
+            justify-content: space-between;
+
+            .presentation{
+                display: flex;
+                align-items: center;
+                /* box-shadow: cyan 0px 15px 10px -15px; */
+                background-color: rgb(61, 34, 80); 
+                border-radius: 1rem;
+                padding: 0 1rem 0 .5rem;
+
+
+                img{
+                    height: 80px;
+                    width: 90px;
+                }
+
+                p{
+
+                    font-family: league;
+                    font-size: 1.5rem;
+
+                    span{
+                        font-size: .75rem;
+                        letter-spacing: 1px;
+    
+                    }
+                } 
+            }
+
+            .right-items-2{
+                display:flex;
+                list-style-type: none;
+                align-items: center;
+                gap: 30px;
+                font-weight: bold;
+                font-family: league;
+                position: relative;
+                top: 5px;
+
+                li{
+                    background-color: goldenrod;
+                    border-radius: .5rem;
+                    padding: .3rem;
+                    margin-right: 50px;
+                    display: flex;
+                    height: 20px;
+                    width: 70px;
+                    justify-content: center;
+                    align-items: center;
+                    text-shadow: black 1px 1px 2px;
+                    outline: rgb(141, 107, 20) 2px solid;
+
+                    a{
+                        text-decoration: none;
+                        color:white;
+                
+                    }
+                }
+            }
+        }
+    }
+
+    .body-grid{
+        grid-column: 2 / -1;
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template: 1fr / 1fr 400px;
+        
+        .body-right-side{
+            background-color: rgb(77, 42, 102); 
+            padding: 1rem;
+            color:white;
+            
+            h3{
+                font-family: league;
+                color: gold;
+                font-size: 1.3rem;
+                text-shadow:  black 2px 2px 3px;
+                margin-bottom: 10px;
+            }
+
+            .announce-div{
+                background-color: rgba(160, 243, 242, .8);
+                display:flex;
+                flex-direction: column;
+                padding: .7rem;
+                border: rgb(154, 6, 128) 3px solid;
+                box-shadow: rgb(26, 26, 26) 2px 2px 4px;
+                margin-bottom: 11px;
+                gap: 15px;
+                
+                p{
+                    color: rgb(154, 6, 128);
+                    background-color: white;
+                    padding: .5rem;
+                    border-radius: 1rem;
+                    outline: rgb(154, 6, 128);
+                    font-size: .95rem;
+                }
+
+                span{
+                    color:black;
+                    font-size: 1.15rem;
+                    font-family: league;
+                }
+
+                hr{
+                    width: 200px;
+                    align-self: center;
+                    background-color: rgb(0, 163, 160);
+                }
+            }
+
+            .trending-div{
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                font-size: .95rem;
+                box-shadow: black 1px 4px 6px;
+                background-color: rgb(64, 24, 92); 
+                padding: .3rem 1rem .5rem 1rem;
+                img{
+
+                    height: 40px;
+                    width: 48px;
+                    background-color: rgb(46, 20, 65); 
+                    border-radius: 50%;
+                    outline: rgb(154, 6, 128) 2px ridge;
+                    position: relative;
+                    margin-right: 8px;
+                    top: 10px;
+                }
+
+                span{
+                    position:relative;
+                    left: 60px;
+                    font-size: .7rem;
+                    color:rgb(194, 127, 214);
+                }
+            }
+        }
+        
+        .project-board{
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+            background-color: rgb(90, 52, 117);
+            padding: 3rem 1rem 1rem 1rem;
+            gap: 20px;
+
+            div.project{
+                display:flex;
+                flex-direction: column;
+                padding: 1rem;
+                background-color: #2b2d42;
+                border-radius: .8rem;
+                border-left: cyan 8px solid;
+                box-shadow: black 1px 1px 3px;
+                color: rgb(241, 212, 212);
+                justify-content: space-between; 
+            }
+
+            .title{
+                position: absolute;
+                top: 175px;
+                font-family: league;
+                color: gold;
+                font-size: 1.3rem;
+                text-shadow:  black 2px 2px 3px;  
+            } 
+
+            .project-title{
+                font-family: league;
+                color: magenta;
+                font-size: 1.2rem;
+                text-shadow: black 1px 1px 2px; 
+            }
+
+            .project-description{
+                color: white;
+                font-size: .95rem;
+            }
+
+            svg{
+                align-items: flex-end;
+                float: right;
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+
+
